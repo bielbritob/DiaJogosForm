@@ -4,6 +4,9 @@ def init_db(db_path: str = "data.db"):
     conn = sqlite3.connect(db_path)
     c = conn.cursor()
 
+    #----- Adjust fuso horario utc-4:00 cuiabá ---------
+    #c.execute("PRAGMA DATETIME = '-04:00'")
+
     c.execute("""CREATE TABLE IF NOT EXISTS registrations (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
@@ -13,8 +16,8 @@ def init_db(db_path: str = "data.db"):
         total REAL NOT NULL,
         paid REAL NOT NULL DEFAULT 0,
         is_active INTEGER DEFAULT 1,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        updated_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        created_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')), 
+        updated_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')), 
         UNIQUE(name, version))""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS payment_logs (
@@ -23,7 +26,7 @@ def init_db(db_path: str = "data.db"):
         amount REAL NOT NULL,
         status INTEGER DEFAULT 0,
         payload_hash TEXT NOT NULL,
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        created_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')),
         FOREIGN KEY(registration_id) REFERENCES registrations(id))""")
 
     c.execute("""CREATE TABLE IF NOT EXISTS registration_changes (
@@ -32,7 +35,7 @@ def init_db(db_path: str = "data.db"):
         old_value TEXT NOT NULL,
         new_value TEXT NOT NULL,
         changed_by TEXT DEFAULT 'system',
-        created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+        created_at DATETIME DEFAULT (strftime('%Y-%m-%d %H:%M:%S', 'now', 'localtime')),
         FOREIGN KEY(registration_id) REFERENCES registrations(id))""")
 
     conn.commit()

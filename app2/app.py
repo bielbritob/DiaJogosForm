@@ -1,6 +1,7 @@
 import streamlit as st
 
 from db import init_db
+from db.operations import create_registration
 from db.operations import get_active_registration
 from components import registration_summary, payment_history
 from generator import generate_pix_payload
@@ -22,9 +23,9 @@ def main():
 
 
     if st.session_state['currentPage'] == 'home':
-        config.custom_title()
+        config.custom_title_home()
 
-        config.nobt_background()
+        config.nobt_background_home()
 
         with st.form("main_form"):
             name = st.text_input("Nome Completo").strip()
@@ -69,15 +70,39 @@ def main():
             st.rerun()
 
     elif st.session_state['currentPage'] == 'register':
-        st.write("📄 Página de Registro — Aqui você colocaria o formulário de nova inscrição.")
+        config.custom_title_register()
+        st.divider()
+        col1, col2, col3 = st.columns([1.5,0.000000000000001,1],  border=False, vertical_alignment= 'center')
+        with col3:
+            st.image(image=config.BANNER_HOME, use_container_width=True, width=10)
 
-        col1, col2, col3 = st.columns([1,5,1],  border=False, vertical_alignment= 'center')
-        with col2:
-            st.image(image=config.BANNER_HOME, use_container_width=True, width=1800)
+        with col1:
+            with st.form("main_form"):
+                name = st.text_input("Nome Completo").strip()
 
-        if st.button("Voltar"):
-            st.session_state['currentPage'] = 'home'
-            st.rerun()
+                selected_modalities = st.pills(f"Modalidades (R$ {int(config.price_modality)},00 cada)", config.modalidades, selection_mode='multi')
+                wants_lunch = st.checkbox(
+                    f"Adicionar marmita (R$ {int(config.price_marmita)},00)", value=False)
+
+                total = 0
+                if st.form_submit_button("Avançar"):
+                    if not name:
+                        st.error("Por favor, insira seu nome completo")
+                    elif not config.modalidades:
+                        st.error("Selecione ao menos uma modalidade")
+                    else:
+                        total = len(selected_modalities) * config.price_modality
+                        if wants_lunch:
+                            total += config.price_marmita
+
+                    create_registration(name=name,modality=",".join(selected_modalities),wants_lunch=wants_lunch,total=total)
+
+                if config.Debug:
+                    st.write('total:', total)
+        if config.Debug:
+            if st.button("Voltar"):
+                st.session_state['currentPage'] = 'home'
+                st.rerun()
 
 
 if __name__ == "__main__":
