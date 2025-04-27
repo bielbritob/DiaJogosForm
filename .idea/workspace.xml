@@ -4,9 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="24a34912-639b-4cd5-a78c-7f813b53c15a" name="Changes" comment="commit #5 -upload to cloud">
+    <list default="true" id="24a34912-639b-4cd5-a78c-7f813b53c15a" name="Changes" comment="commit #7 -upload to cloud">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.streamlit/secrets.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app2/tes2GSHEET.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app2/testGSHEET.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/streamlit_app/.streamlit/secrets.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/streamlit_app/appGSheet.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app2/requeriments.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app2/requeriments.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/db.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pix.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/pix.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/app/ui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app2/appGSheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2/components.py" beforeDir="false" afterPath="$PROJECT_DIR$/app2/components.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/app2/generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app2/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/app2/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main2.0.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/main2.0.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainmy.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mainmy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,29 +68,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Image.executor&quot;: &quot;Run&quot;,
-    &quot;Python.generator.executor&quot;: &quot;Run&quot;,
-    &quot;Python.setup.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/bielb/PycharmProjects/DiaJogosForm/app2/db&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Image.executor": "Run",
+    "Python.generator.executor": "Run",
+    "Python.setup.executor": "Run",
+    "Python.test.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/bielb/PycharmProjects/DiaJogosForm",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm" />
+      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\streamlit_app" />
       <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\app2\db" />
       <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\formulario\configs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\tests" />
+      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\app2\.streamlit" />
       <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\app2" />
       <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\config" />
       <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm" />
-      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\app2\config" />
-      <recent name="C:\Users\bielb\PycharmProjects\DiaJogosForm\app2\utils" />
     </key>
   </component>
   <component name="RunManager">
@@ -88,7 +109,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\bielb\PycharmProjects\DiaJogosForm\tests\main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -146,7 +167,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745538940481</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit #6 -upload to cloud">
+      <option name="closed" value="true" />
+      <created>1745539292145</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745539292145</updated>
+    </task>
+    <task id="LOCAL-00006" summary="commit #7 -upload to cloud">
+      <option name="closed" value="true" />
+      <created>1745539493484</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745539493484</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -154,6 +191,8 @@
     <MESSAGE value="commit #3" />
     <MESSAGE value="commit #4 -fixes the database timezone utc-4 and registry data saved" />
     <MESSAGE value="commit #5 -upload to cloud" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit #5 -upload to cloud" />
+    <MESSAGE value="commit #6 -upload to cloud" />
+    <MESSAGE value="commit #7 -upload to cloud" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit #7 -upload to cloud" />
   </component>
 </project>
