@@ -13,7 +13,9 @@ BANNER_HOME = 'app2/assets/banner_insta.jpg'
 
 NoBTImg = 'app2/assets/nobtback.png'
 
-Debug = True
+Debug = False
+
+currentVersion = 'alphaVersion1.2'
 
 main_bg = NoBTImg
 main_bg_ext = "png"

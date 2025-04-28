@@ -4,23 +4,33 @@ import pandas as pd
 def registration_summary(reg):
     # Garante conversão para float
     total = float(reg['total'])
-    paid = float(reg.get('paid', 0))
+    paid = bool(reg.get('paid', 0))
 
     st.subheader("📋 Resumo da Inscrição")
     cols = st.columns([1, 2])
     with cols[0]:
         st.metric("Total a Pagar", f"R$ {total:.2f}")
-        if paid >= total:
+        if paid:
             status = "✅ Pago"
         else:
             status = "❌ Pendente"
         st.metric("Status", status)
+        if paid:
+            st.success(
+                "Recebemos seu pagamento de "
+                f"R$ {total:.2f}! 🎉\n\n"
+            )
+        else:
+            st.info(
+                "Após efetuar o pagamento via PIX, aguarde a nossa validação.\n\n"
+                "Seu status mudará para (✅ Pago) assim que validarmos."
+            )
 
     with cols[1]:
         st.write("**Modalidades:**")
 
 
-        for mod in reg['modality'].split(','):
+        for mod in reg['modality'].split(","):
             st.write(f"- {mod} (R$ 5.00)")
         if reg['wants_lunch']:
             st.write("- 🍱 Marmita (R$ 20.00)")
