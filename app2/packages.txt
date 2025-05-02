@@ -1,2 +1,7 @@
 tesseract-ocr
 tesseract-ocr-por
+libcairo2-dev
+libcairo2
+cairo
+pkg-config
+python3-dev
