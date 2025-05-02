@@ -1,4 +1,4 @@
-from pypix.pix import Pix
+from pypixmod.pix import Pix
 from pypix.core.styles.qr_styler import GradientMode
 from pypix.core.styles.marker_styles import MarkerStyle
 from pypix.core.styles.border_styles import BorderStyle

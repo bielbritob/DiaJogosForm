@@ -7,11 +7,6 @@ from pypix.core.styles.marker_styles import MarkerStyle, MARKER_SVGS
 from pypix.core.styles.border_styles import BorderStyle, BORDER_SVGS
 from pypix.core.styles.line_styles import LineStyle, LINE_STYLES
 from pypix.core.styles.frame_styles import FrameStyle
-from pypix.core.utils.image_utils import (
-    svg_to_pil,
-    add_center_image,
-    apply_frame_qr
-)
 
 
 class Generator(qrcode.QRCode):
@@ -63,16 +58,9 @@ class Generator(qrcode.QRCode):
             mode=gradient_mode
         )
 
-        border_img = svg_to_pil(BORDER_SVGS[border_style], size * 7)
-        center_img = svg_to_pil(MARKER_SVGS[marker_style], size * 3)
 
-        self._draw_custom_position_patterns(
-            img,
-            border_img,
-            center_img,
-            size,
-            border
-        )
+
+
 
         if self.style_mode == "Full":
             img = QRCodeStyler.apply_gradient(
@@ -81,15 +69,13 @@ class Generator(qrcode.QRCode):
                 mode=gradient_mode
             )
 
-        if center_image:
-            add_center_image(img, center_image)
+
 
         if self.frame_style:
             svg_str = self.frame_style
             if not isinstance(self.frame_style, str):
                 svg_str = self.frame_style.svg()
-            frame_img = svg_to_pil(svg_str, size=500)
-            img = apply_frame_qr(frame_img, img)
+
 
         return img
 
