@@ -3,7 +3,6 @@ import base64
 from io import BytesIO
 from binascii import crc_hqx
 from unicodedata import normalize
-from app2.pypixmod.core.qrgen import Generator
 
 
 def validate_cpf(numbers):
@@ -41,10 +40,6 @@ def crc_compute(hex_string):
     crc = crc_hqx(msg, 0xffff)
     return '{:04X}'.format(crc & 0xffff)
 
-
-def get_qrcode():
-    qr_generator = Generator()
-    return qr_generator
 
 
 def base64_qrcode(img):
@@ -154,29 +149,3 @@ class Pix:
             '62', get_value('05', '***')
         )
 
-    def save_qrcode(
-            self,
-            output='./qrcode.png',
-            box_size=7,
-            border=1,
-            custom_logo=None,
-            **kwargs
-    ):
-        try:
-            self.qr = get_qrcode()
-
-            qr_img = self.qr.create_custom_qr(
-                self.get_br_code(),
-                size=box_size,
-                border=border,
-                center_image=custom_logo,
-                **kwargs
-            )
-            qr_img.save(output)
-            return base64_qrcode(qr_img)
-        except ValueError as e:
-            print(f"Error saving QR Code: {e}")
-            return False
-
-    def qr_ascii(self):
-        return self.qr.print_ascii()
