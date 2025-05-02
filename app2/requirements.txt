@@ -1,5 +1,5 @@
 qrcode==7.4.2
 pillow==11.2.1
 pytesseract==0.3.13
-pypix==0.1.6
+git+https://github.com/cleitonleonel/pypix.git
 git+https://github.com/streamlit/gsheets-connection
