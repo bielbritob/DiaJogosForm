@@ -3,7 +3,7 @@ import base64
 from io import BytesIO
 from binascii import crc_hqx
 from unicodedata import normalize
-from pypix.core.qrgen import Generator
+from app2.pypixmod.core.qrgen import Generator
 
 
 def validate_cpf(numbers):

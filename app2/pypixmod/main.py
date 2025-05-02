@@ -1,9 +1,9 @@
-from pypixmod.pix import Pix
-from pypix.core.styles.qr_styler import GradientMode
-from pypix.core.styles.marker_styles import MarkerStyle
-from pypix.core.styles.border_styles import BorderStyle
-from pypix.core.styles.line_styles import LineStyle
-from pypix.core.styles.frame_styles import FrameStyle
+from app2.pypixmod.pix import Pix
+from app2.pypixmod.core.styles.qr_styler import GradientMode
+from app2.pypixmod.core.styles.marker_styles import MarkerStyle
+from app2.pypixmod.core.styles.border_styles import BorderStyle
+from app2.pypixmod.core.styles.line_styles import LineStyle
+from app2.pypixmod.core.styles.frame_styles import FrameStyle
 
 
 def normal_static():  # Testado e funcionando para Nubank, Inter, Caixa

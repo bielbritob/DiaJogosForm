@@ -2,11 +2,11 @@ import qrcode
 from qrcode.image.styledpil import StyledPilImage
 from PIL import Image
 from typing import Optional
-from pypix.core.styles.qr_styler import QRCodeStyler, GradientMode
-from pypix.core.styles.marker_styles import MarkerStyle, MARKER_SVGS
-from pypix.core.styles.border_styles import BorderStyle, BORDER_SVGS
-from pypix.core.styles.line_styles import LineStyle, LINE_STYLES
-from pypix.core.styles.frame_styles import FrameStyle
+from app2.pypixmod.core.styles.qr_styler import QRCodeStyler, GradientMode
+from app2.pypixmod.core.styles.marker_styles import MarkerStyle, MARKER_SVGS
+from app2.pypixmod.core.styles.border_styles import BorderStyle, BORDER_SVGS
+from app2.pypixmod.core.styles.line_styles import LineStyle, LINE_STYLES
+from app2.pypixmod.core.styles.frame_styles import FrameStyle
 
 
 class Generator(qrcode.QRCode):
