@@ -509,23 +509,43 @@ def main():
                 #--------- Validacao Pagamento -----------
                 st.markdown("---")
                 st.subheader("Envie um comprovante (imagem/pdf) para validação OCR")
-                st.markdown("""
+                st.markdown(f"""
                 <div style="
+                    display: flex;
                     background-color: #5c5000;
-                    border-left: 5px solid #ffa500;
-                    padding: 12px 16px;
+                    border-left: 7px solid #ffa500;
+                    padding: 15px;
                     border-radius: 4px;
-                    color: #bec24a;
+                    color: #ffffff;
                     font-family: Arial, sans-serif;
                     margin-bottom: 1rem;
+                    align-items: center;
                 ">
-                  <strong style="font-size:1.1em;">⚠️ Para validar seu comprovante, ele deve conter:</strong>
-                  <ul style="margin:8px 0 0 1.2em; padding: 0; list-style-type: disc;">
-                    <li><span style="font-weight:600;">Valor</span> (R$ XX,XX)</li>
-                    <li><span style="font-weight:600;">Recebedor</span> (nome da chave PIX)</li>
-                    <li><span style="font-weight:600;">Tipo de Transferência</span> (deve aparecer “Pix”)</li>
-                    <li><span style="font-weight:600;">Identificador / Detalhes</span> (código de 6 dígitos)</li>
-                  </ul>
+                  <!-- Texto à esquerda -->
+                  <div style="flex: 1; padding-right: 70px;">
+                    <strong style="font-size: 1.5em; display: block; margin-bottom: 0.0em; color: #fffacd;">
+                      ⚠️ Para validar seu comprovante, ele deve conter:
+                    </strong>
+                    <ul style="margin: 0 0 1em 0em; padding: 0; list-style-type: disc; color: #fffacd;">
+                      <li><span style="font-weight:900;">Valor:  </span> (R$ XX,XX)</li>
+                      <li><span style="font-weight:900;">Recebedor:</span> (nome da chave PIX)</li>
+                      <li><span style="font-weight:900;">Tipo de Transferência:</span> (deve aparecer “Pix”)</li>
+                      <li><span style="font-weight:900;">Identificador / Detalhes:</span> (código de 6 dígitos)</li>
+                    </ul>
+                    <div style="margin-top: 12px; font-size: 1.05em; font-weight: bold; color: #ffffff;">
+                      Exemplo:
+                      <span style="display: inline-block; transform: translateY(1px); margin-left: 4px;">➡</span>
+                    </div>
+                  </div>
+
+                  <!-- Imagem à direita -->
+                  <div style="flex:auto auto auto;">
+                    <img
+                      src="https://github.com/bielbritob/DiaJogosForm/blob/master/app2/assets/exemplo_pix.png?raw=true"
+                      alt="Exemplo de comprovante PIX"
+                      style="max-width: 300px; border: 2px solid #ffa500; border-radius: 6px;"
+                    />
+                  </div>
                 </div>
                 """, unsafe_allow_html=True)
                 uploaded = st.file_uploader("Comprovante", type=["png", "jpg", "jpeg"])
