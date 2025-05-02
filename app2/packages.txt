@@ -1,5 +1,5 @@
 tesseract-ocr
 tesseract-ocr-por
-gtk4
+libgtk-3-0
 poetry-core
 poetry.core.masonry.api
