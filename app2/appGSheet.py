@@ -499,7 +499,7 @@ def main():
                                     updated_at=datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S"))
 
                 img_bytes = show_qr_code(payload)
-                st.image(img_bytes, caption="QR Code PIX",output_format='JPEG')
+                st.image(img_bytes, caption="QR Code PIX", output_format='PNG')
 
                 #st.badge("chave pix alternativa:", color='gray')
                 #st.code("lcamille603@gmail.com")
