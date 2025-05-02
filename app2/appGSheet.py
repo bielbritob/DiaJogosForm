@@ -498,8 +498,8 @@ def main():
                                     created_at=st.session_state['reg_data']['created_at'],
                                     updated_at=datetime.now(tz).strftime("%Y-%m-%d %H:%M:%S"))
 
-                img = show_qr_code(payload)
-                st.image(img, caption='QR Code PIX')
+                img_bytes = show_qr_code(payload)
+                st.image(img_bytes, caption="QR Code PIX",output_format='JPEG')
 
                 #st.badge("chave pix alternativa:", color='gray')
                 #st.code("lcamille603@gmail.com")
