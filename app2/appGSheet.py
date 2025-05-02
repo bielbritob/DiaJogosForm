@@ -11,7 +11,7 @@ from random import randint
 from PIL import Image
 import pytesseract
 import re
-from pypix import Pix
+from pypixmod import Pix
 from zoneinfo import ZoneInfo
 import random
 
