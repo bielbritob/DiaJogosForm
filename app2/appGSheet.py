@@ -533,7 +533,7 @@ def main():
 
                 #================ DEBUG LOCAL ONLY ===================
                 #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
-                pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'
+
                 # --- funcoes de parsing ---
                 # padrões da sua descrição de payload
                 KEYWORDS_DESC = ["DiaDJogos", "Terceirinhos", "PYPIX", "Pix"]
@@ -903,3 +903,19 @@ def main():
 if __name__ == "__main__":
     pix = Pix()
     main()
+    import shutil
+    import streamlit as st
+
+    pytesseract.pytesseract.tesseract_cmd = None
+
+
+    # search for tesseract binary in path
+    @st.cache_resource
+    def find_tesseract_binary() -> str:
+        return shutil.which("tesseract")
+
+
+    # set tesseract binary path
+    pytesseract.pytesseract.tesseract_cmd = find_tesseract_binary()
+    if not pytesseract.pytesseract.tesseract_cmd:
+        st.error("Tesseract binary not found in PATH. Please install Tesseract.")
