@@ -4,39 +4,42 @@ import pandas as pd
 def registration_summary(reg):
     # Garante conversão para float
     total = float(reg['total'])
-    paid = bool(reg.get('paid', 0))
+    paid_value = float(reg.get('paid_value')) ###############
 
     st.subheader("📋 Resumo da Inscrição")
     cols = st.columns([1, 2])
     with cols[0]:
+        # Mostra total vs pago
         st.metric("Total a Pagar", f"R$ {total:.2f}")
-        if paid:
+        # Exibe valor já pago
+        if paid_value > 0:
+            st.metric("Já Pago", f"R$ {paid_value:.2f}")
+            st.write("---")
+        # Status geral
+        if paid_value >= total:
             status = "✅ Pago"
+            st.success(f"🎉 Pagamento concluído! Recebemos R$ {paid_value:.2f}.")
+        elif paid_value > 0:
+            restante = total - paid_value
+            status = "⚠️ Parcial"
+            st.warning(f"Você já pagou R$ {paid_value:.2f}. \n \n Faltam R${restante:.2f} para completar.")
+
         else:
             status = "❌ Pendente"
-        st.metric("Status", status)
-        if paid:
-            st.success(
-                "Recebemos seu pagamento de "
-                f"R$ {total:.2f}! 🎉\n\n"
-            )
-        else:
             st.info(
-                "Após efetuar o pagamento via PIX, aguarde a nossa validação.\n\n"
-                "Seu status mudará para (✅ Pago) assim que validarmos."
-            )
+                "Após efetuar o pagamento via PIX, valide seu comprovante.\n"
+                "Seu status mudará para Pago assim que validarmos.")
+        st.metric("Status", status)
 
     with cols[1]:
         st.write("**Modalidades:**")
-
-
+        # Lista de modalidades
         for mod in reg['modality'].split(","):
             st.write(f"- {mod} (R$ 5.00)")
         if reg['wants_lunch']:
             st.write("- 🍱 Marmita (R$ 20.00)")
 
     st.caption(f"Última atualização: {reg['updated_at']}")
-
 
 def payment_history(reg_id):
     # Obtém a conexão com o Google Sheets

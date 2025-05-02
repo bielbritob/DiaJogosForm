@@ -1,7 +1,7 @@
 import streamlit as st
 import base64
 
-PIX_KEY = "sua-chave-pix"
+PIX_KEY = "02354629265"
 MERCHANT_NAME = "Terceirinhos"
 MERCHANT_CITY = "Porto Velho"
 
