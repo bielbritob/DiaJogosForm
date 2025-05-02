@@ -532,7 +532,7 @@ def main():
 
 
                 #================ DEBUG LOCAL ONLY ===================
-                pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
+                #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract'
 
                 # --- funcoes de parsing ---
                 # padrões da sua descrição de payload
