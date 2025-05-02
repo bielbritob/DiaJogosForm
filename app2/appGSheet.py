@@ -908,9 +908,7 @@ def main():
                     st.write(selected_modalities)
 
                     #st.session_state['currentPage'] = 'payment'
-                else:
-                    #st.session_state['currentPage'] = 'payment'
-                    pass
+
 
 
 
